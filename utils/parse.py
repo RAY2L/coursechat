@@ -1,8 +1,11 @@
+from CustomSplitter import CustomSplitter
+
 import requests
 from requests.exceptions import RequestException
 from typing import Dict, List, Optional
 
 from bs4 import BeautifulSoup, Tag
+from langchain.docstore.document import Document
 
 
 def construct_url(major: str) -> str:
@@ -182,7 +185,7 @@ def generate_course_blobs(
     return course_blobs
 
 
-def generate_major_docs(major: str) -> List[str]:
+def generate_major_docs(major: str) -> List[Document]:
     """
     Fetches all courses related to a specific major and generates a list of documents,
     where each document is a string representation of all courses in a single course group.
@@ -197,6 +200,9 @@ def generate_major_docs(major: str) -> List[str]:
     # Fetch the list of course groups for the given major
     course_groups = fetch_courses_for_major(major)
     # Generate a list of Document's for these course_groups
-    docs = generate_course_blobs(course_groups)
+    course_blobs = generate_course_blobs(course_groups)
+
+    text_splitter = CustomSplitter()
+    docs = text_splitter.create_documents(course_blobs)
 
     return docs

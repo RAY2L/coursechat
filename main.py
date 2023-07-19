@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from utils import generate_major_docs
+from utils.parse import generate_major_docs
 
 
 def main():
