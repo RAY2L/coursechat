@@ -1,0 +1,49 @@
+<section class="jumbotron text-center">
+  <div class="container my-5">
+    <h1 class="jumbotron-heading my-4">Re-evaluate course evaluations</h1>
+    <div class="container">
+      <input
+        type="text"
+        class="form-control-lg"
+        id="autocomplete-input"
+        placeholder="Type here..."
+      />
+    </div>
+  </div>
+</section>
+
+<script>
+  const choices = [
+    { name: "CMSC 16100", value: { subject: "CMSC", courseId: "16100" } },
+    { name: "CMSC 23200", value: { subject: "CMSC", courseId: "23200" } },
+    { name: "CMSC 28000", value: { subject: "CMSC", courseId: "28000" } },
+  ];
+
+  $("#autocomplete-input")
+    .typeahead({
+      source: choices,
+      autoSelect: true,
+      displayText: function (item) {
+        return item.name;
+      },
+      afterSelect: function (item) {
+        window.location.href =
+          "/" + item.value.subject + "/" + item.value.courseId;
+      },
+    })
+    .keypress(function (e) {
+      if (e.which == 13) {
+        const inputVal = $(this).val();
+        const uniqueMatch = choices.filter(function (choice) {
+          return choice.name.toLowerCase() === inputVal.toLowerCase();
+        });
+        if (uniqueMatch.length === 1) {
+          window.location.href =
+            "/" +
+            uniqueMatch[0].value.subject +
+            "/" +
+            uniqueMatch[0].value.courseId;
+        }
+      }
+    });
+</script>
