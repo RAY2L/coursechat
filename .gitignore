@@ -163,4 +163,3 @@ cython_debug/
 config.py
 
 node_modules
-.vercel
