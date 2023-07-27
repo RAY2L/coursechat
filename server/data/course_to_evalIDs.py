@@ -8,8 +8,8 @@ def course_to_evalIDs(evals) -> Dict[str, List]:
     course_to_evalIDs_dict = defaultdict(set)
 
     for evalID, data in evals.items():
-        for catalog_number in data["Catalog Numbers"]:
-            course = f"{catalog_number['subject']} {catalog_number['courseId']}"
+        for catalog_number in data["Catalog Number"]:
+            course = f"{catalog_number['Subject']} {catalog_number['CourseId']}"
             course_to_evalIDs_dict[course].add(evalID)
 
     for key in course_to_evalIDs_dict:
@@ -20,7 +20,7 @@ def course_to_evalIDs(evals) -> Dict[str, List]:
 
 
 # Open the JSON file
-with open("evalID_to_metadata.json", "r") as file:
+with open("2022.json", "r") as file:
     # Load JSON data from file
     evals = json.load(file)
 

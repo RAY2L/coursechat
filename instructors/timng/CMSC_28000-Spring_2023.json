@@ -1,49 +1,49 @@
 {
-    "General Course Information": "CMSC 28000. Introduction to Formal Languages. 100 Units.\r\n\r\nThis course is a basic introduction to computability theory and formal languages. Topics include automata theory, regular languages, context-free languages, and Turing machines.",
-    "Evaluation Metadata": {
-        "Catalog Numbers": ["CMSC 28000"],
-        "Course Name": "Introduction to Formal Languages",
-        "Instructors": ["timng"],
-        "Academic Year": "2022-2023",
-        "Academic Term": "Spring",
-        "Number Enrolled": 67,
-        "Number Responses": 27
-    },
-    "Evaluation Text Data": {
-        "Thinking about your time in the class, what aspect of the instructor's teaching contributed most to your learning?": [
-            "Always willing to answer questions, goes pretty, slowly, very understandable",
-            "Notes posted online",
-            "lecture notes",
-            "Professor Ng is an excellent lecturer and his course was extremely well–organized.",
-            "Professor makes time for his students.",
-            "Ng is great at lectures and his online notes were also super well typed and helpful. Very well organized course overall",
-            "Prof. Ng was not only passionate about the topic but he was also very accommodating to different backgrounds and situations that students might be facing. He only cared about whether everyone in class actually learned something fro mt he course.",
-            "Professor, was incredibly meticulous in his lectures. He challenged us to engage in his lectures.(literally we would have minutes of awkward silence until someone answered) He held so many office hours, running over at times. He was so responsive over Ed. He poured so much into the notes. Just above and beyond.",
-            "He was very helpful and available outside of class.",
-            "The consistent and small psets. I really like having a few practice problems every week to solidify my understanding.",
-            "Lectures were helpful and the professor offered several office hours to help students out.",
-            "Lectures note, problem sets and office hours contributed the most to my learning",
-            "Professor Ng explains very very well. He is very organized and very thorough. He made an otherwise difficult course easy to follow and his notes were amazing. He was a great instructor! 10/10 would highly recommend!",
-            "Tim is one of the best professors I've had here – he breaks down potentially–confusing concepts in an organized, easy–to–understand way (even if I didn't understand it on the spot, I knew I could go through the lecture notes later and they'd help me internalize the concepts). Also, he was quite available and invested in helping us during office hours without giving the answer to HW problems away.",
-            "notes were good, lectures were good, he is also helpful outside of class",
-            "Lectures and lecture notes were amazing, have nothing to complain about the instructor.",
-            "The notes on his website are amazing. He motivated things very well. He's also kind and understanding. He's pretty great in every way!"
-        ],
-        "Additional comments about the course:": [
-            "I like that we were permitted to resubmit assignments, but sometimes the comments from TAs were so lackluster that I could hardly figure out how to improve my answers",
-            "Nope",
-            "really appreciated the regrades; grading on homeworks was sometimes unncessarily harsh with points being deducted for minor things, but allowing for regrades compnesated for this and was very nice",
-            "This is just a wonderful class. What a breath of fresh air after the shipwreck that is algorithms. Just take it!",
-            "This course just felt like a lot. Assignments every week, with revisions with those too, as well as writing an entire report. My main criticism is how the report was handled. It would be nice to have a week without a problem set, so we can focus on the report instead. That week just felt like a lot.",
-            "Professor Ng is one of the few professors I've had in my time at UChicago that actually keeps pace with the planned material. The coverage wasn't too ambitious and I'm glad we got through it all. I despise when we don't end up learning all the material that was promised in the beginning of the course. Again, the course notes are tremendously helpful in this regard",
-            "Resubmissions were helpful when understanding course content.",
-            "None",
-            "I loved this course. In particular, Tim Ng was likely the best CS professor I have ever had. He actually cares about making the students learn and grow their interest in the topics studied by providing examples of how the material relates to cutting–edge CS theory research.",
-            "Professor Ng is a phenomenal instructor and cares a lot more about teaching than most professors here.",
-            "This is a CS theory course and as is the case with all CS theory courses here, people who aren't math majors are likely to struggle with the proofs. It was really nice that Professor Ng offered revisions for all problems on the problem sets, as that gave people the opportunity to learn and improve with their proof–writing."
-        ]
-    },
-    "Evaluation Statistics Data": {
-        "The Instructor . . .": "\tMean\tMedian\tStrongly Disagree\tDisagree\tNeutral\tAgree\tStrongly Agree\tN\/A\r\nOrganized the course clearly.\t4.87\t5.00\t0.00%\t0.00%\t0.00%\t13.04%\t86.96%\t0.00%\r\nPresented lectures that enhanced your understanding.\t4.70\t5.00\t0.00%\t0.00%\t8.70%\t13.04%\t78.26%\t0.00%\r\nFacilitated discussions that were engaging and useful.\t4.63\t5.00\t0.00%\t4.55%\t0.00%\t18.18%\t63.64%\t13.64%\r\nStimulated your interest in the core ideas of the course.\t4.65\t5.00\t0.00%\t0.00%\t4.35%\t26.09%\t69.57%\t0.00%\r\nChallenged you to learn.\t4.57\t5.00\t4.35%\t0.00%\t0.00%\t26.09%\t69.57%\t0.00%\r\nHelped you gain significant learning from the course content.\t4.48\t5.00\t4.35%\t0.00%\t4.35%\t26.09%\t65.22%\t0.00%\r\nWas available and helpful outside of class.\t4.90\t5.00\t0.00%\t0.00%\t0.00%\t8.70%\t82.61%\t8.70%\r\nMotivated you to think independently.\t4.74\t5.00\t0.00%\t0.00%\t4.35%\t17.39%\t78.26%\t0.00%\r\nWorked to create an inclusive and welcoming learning environment.\t4.54\t5.00\t4.17%\t0.00%\t4.17%\t20.83%\t70.83%\t0.00%\r\nOverall, this instructor made a significant contribution to your learning.\t4.65\t5.00\t0.00%\t0.00%\t8.70%\t17.39%\t73.91%\t0.00%"
-    }
+  "General Course Information": "CMSC 28000. Introduction to Formal Languages. 100 Units.\r\n\r\nThis course is a basic introduction to computability theory and formal languages. Topics include automata theory, regular languages, context-free languages, and Turing machines.",
+  "Evaluation Metadata": {
+    "Catalog Number": ["CMSC 28000"],
+    "Course Name": "Introduction to Formal Languages",
+    "Instructors": ["timng"],
+    "Academic Year": "2022-2023",
+    "Academic Term": "Spring",
+    "Number Enrolled": 67,
+    "Number Responses": 27
+  },
+  "Evaluation Text Data": {
+    "Thinking about your time in the class, what aspect of the instructor's teaching contributed most to your learning?": [
+      "Always willing to answer questions, goes pretty, slowly, very understandable",
+      "Notes posted online",
+      "lecture notes",
+      "Professor Ng is an excellent lecturer and his course was extremely well–organized.",
+      "Professor makes time for his students.",
+      "Ng is great at lectures and his online notes were also super well typed and helpful. Very well organized course overall",
+      "Prof. Ng was not only passionate about the topic but he was also very accommodating to different backgrounds and situations that students might be facing. He only cared about whether everyone in class actually learned something fro mt he course.",
+      "Professor, was incredibly meticulous in his lectures. He challenged us to engage in his lectures.(literally we would have minutes of awkward silence until someone answered) He held so many office hours, running over at times. He was so responsive over Ed. He poured so much into the notes. Just above and beyond.",
+      "He was very helpful and available outside of class.",
+      "The consistent and small psets. I really like having a few practice problems every week to solidify my understanding.",
+      "Lectures were helpful and the professor offered several office hours to help students out.",
+      "Lectures note, problem sets and office hours contributed the most to my learning",
+      "Professor Ng explains very very well. He is very organized and very thorough. He made an otherwise difficult course easy to follow and his notes were amazing. He was a great instructor! 10/10 would highly recommend!",
+      "Tim is one of the best professors I've had here – he breaks down potentially–confusing concepts in an organized, easy–to–understand way (even if I didn't understand it on the spot, I knew I could go through the lecture notes later and they'd help me internalize the concepts). Also, he was quite available and invested in helping us during office hours without giving the answer to HW problems away.",
+      "notes were good, lectures were good, he is also helpful outside of class",
+      "Lectures and lecture notes were amazing, have nothing to complain about the instructor.",
+      "The notes on his website are amazing. He motivated things very well. He's also kind and understanding. He's pretty great in every way!"
+    ],
+    "Additional comments about the course:": [
+      "I like that we were permitted to resubmit assignments, but sometimes the comments from TAs were so lackluster that I could hardly figure out how to improve my answers",
+      "Nope",
+      "really appreciated the regrades; grading on homeworks was sometimes unncessarily harsh with points being deducted for minor things, but allowing for regrades compnesated for this and was very nice",
+      "This is just a wonderful class. What a breath of fresh air after the shipwreck that is algorithms. Just take it!",
+      "This course just felt like a lot. Assignments every week, with revisions with those too, as well as writing an entire report. My main criticism is how the report was handled. It would be nice to have a week without a problem set, so we can focus on the report instead. That week just felt like a lot.",
+      "Professor Ng is one of the few professors I've had in my time at UChicago that actually keeps pace with the planned material. The coverage wasn't too ambitious and I'm glad we got through it all. I despise when we don't end up learning all the material that was promised in the beginning of the course. Again, the course notes are tremendously helpful in this regard",
+      "Resubmissions were helpful when understanding course content.",
+      "None",
+      "I loved this course. In particular, Tim Ng was likely the best CS professor I have ever had. He actually cares about making the students learn and grow their interest in the topics studied by providing examples of how the material relates to cutting–edge CS theory research.",
+      "Professor Ng is a phenomenal instructor and cares a lot more about teaching than most professors here.",
+      "This is a CS theory course and as is the case with all CS theory courses here, people who aren't math majors are likely to struggle with the proofs. It was really nice that Professor Ng offered revisions for all problems on the problem sets, as that gave people the opportunity to learn and improve with their proof–writing."
+    ]
+  },
+  "Evaluation Statistics Data": {
+    "The Instructor . . .": "\tMean\tMedian\tStrongly Disagree\tDisagree\tNeutral\tAgree\tStrongly Agree\tN/A\r\nOrganized the course clearly.\t4.87\t5.00\t0.00%\t0.00%\t0.00%\t13.04%\t86.96%\t0.00%\r\nPresented lectures that enhanced your understanding.\t4.70\t5.00\t0.00%\t0.00%\t8.70%\t13.04%\t78.26%\t0.00%\r\nFacilitated discussions that were engaging and useful.\t4.63\t5.00\t0.00%\t4.55%\t0.00%\t18.18%\t63.64%\t13.64%\r\nStimulated your interest in the core ideas of the course.\t4.65\t5.00\t0.00%\t0.00%\t4.35%\t26.09%\t69.57%\t0.00%\r\nChallenged you to learn.\t4.57\t5.00\t4.35%\t0.00%\t0.00%\t26.09%\t69.57%\t0.00%\r\nHelped you gain significant learning from the course content.\t4.48\t5.00\t4.35%\t0.00%\t4.35%\t26.09%\t65.22%\t0.00%\r\nWas available and helpful outside of class.\t4.90\t5.00\t0.00%\t0.00%\t0.00%\t8.70%\t82.61%\t8.70%\r\nMotivated you to think independently.\t4.74\t5.00\t0.00%\t0.00%\t4.35%\t17.39%\t78.26%\t0.00%\r\nWorked to create an inclusive and welcoming learning environment.\t4.54\t5.00\t4.17%\t0.00%\t4.17%\t20.83%\t70.83%\t0.00%\r\nOverall, this instructor made a significant contribution to your learning.\t4.65\t5.00\t0.00%\t0.00%\t8.70%\t17.39%\t73.91%\t0.00%"
+  }
 }

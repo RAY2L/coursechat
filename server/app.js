@@ -19,14 +19,18 @@ const course_to_evalIDs_raw_data = fs.readFileSync(
 );
 const course_to_evalIDs = JSON.parse(course_to_evalIDs_raw_data);
 
-const evalID_to_metadata_raw_data = fs.readFileSync(
-  "data/evalID_to_metadata.json"
-);
+const evalID_to_metadata_raw_data = fs.readFileSync("data/2022.json");
 const evalID_to_metadata = JSON.parse(evalID_to_metadata_raw_data);
 
 const course_to_metadatas = Object.fromEntries(
   Object.entries(course_to_evalIDs).map(([course, evalIDs]) => {
-    const metadatas = evalIDs.map((evalID) => evalID_to_metadata[evalID]);
+    // console.log(evalIDs);
+    const metadatas = evalIDs.map((evalID) => {
+      // console.log(evalID_to_metadata[evalID]);
+      // console.log(evalID_to_metadata[evalID]);
+      return evalID_to_metadata[evalID];
+    });
+    // console.log(course, metadatas);
 
     return [course, metadatas];
   })
@@ -34,11 +38,11 @@ const course_to_metadatas = Object.fromEntries(
 
 app.get("/eval/:evalID", (req, res) => {
   const evalID = req.params.evalID;
-  console.log(evalID);
+  // console.log(evalID);
   const metadata = evalID_to_metadata[evalID];
 
-  res.render("pages/evaluation", {metadata: metadata});
-})
+  res.render("pages/evaluation", { metadata: metadata });
+});
 
 app.get("/:subject/:courseId", function (req, res) {
   const subject = req.params.subject;
@@ -51,11 +55,15 @@ app.get("/:subject/:courseId", function (req, res) {
   const course = `${subject} ${courseId}`;
 
   if (course_list.includes(course)) {
+    // console.log(course_to_evalIDs);
+    // console.log(course_to_metadatas[course]);
+    // console.log(course);
+    // console.log(course_to_metadatas[course]);
     res.render("pages/course", {
       subject: subject,
       courseId: courseId,
       evalIDs: JSON.stringify(course_to_evalIDs),
-      course_sections: course_to_metadatas[course]
+      course_sections: course_to_metadatas[course],
     });
   } else {
     res.redirect("/");
@@ -72,7 +80,6 @@ app.get("/", (req, res) => {
 app.get("*", (req, res) => {
   res.redirect("/");
 });
-
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
