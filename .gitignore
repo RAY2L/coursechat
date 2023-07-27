@@ -162,4 +162,5 @@ cython_debug/
 .vscode
 config.py
 
-server/node_modules
+node_modules
+.vercel
