@@ -40,13 +40,13 @@ const course_to_metadatas = Object.fromEntries(
   })
 );
 
-// app.get("/eval/:evalID", (req, res) => {
-//   const evalID = req.params.evalID;
-//   // console.log(evalID);
-//   const metadata = evalID_to_metadata[evalID];
+app.get("/eval/:evalID", (req, res) => {
+  const evalID = req.params.evalID;
+  // console.log(evalID);
+  const metadata = evalID_to_metadata[evalID];
 
-//   res.render("pages/evaluation", { metadata: metadata });
-// });
+  res.render("pages/evaluation", { metadata: metadata });
+});
 
 app.get("/:subject/:courseId", function (req, res) {
   const subject = req.params.subject;
