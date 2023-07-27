@@ -77,7 +77,7 @@ const course_to_metadatas = Object.fromEntries(
 // make sure to put this second to last...
 app.get("/", (req, res) => {
   // console.log(courses);
-  res.render("pages/index");
+  res.render("pages/index", { courses: courses });
 });
 
 // not `app.all(...)`?
