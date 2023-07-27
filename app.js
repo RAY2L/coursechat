@@ -9,10 +9,10 @@ app.set("views", path.join(__dirname, "views"));
 
 app.set("view engine", "ejs");
 
-// const courses_raw_data = fs.readFileSync(
-//   path.join(__dirname, "data/courses.json")
-// );
-// const courses = JSON.parse(courses_raw_data);
+const courses_raw_data = fs.readFileSync(
+  path.join(__dirname, "data/courses.json")
+);
+const courses = JSON.parse(courses_raw_data);
 
 // const course_list = courses.map((course) => course["name"]);
 
