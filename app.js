@@ -73,7 +73,6 @@ app.get("/:subject/:courseId", function (req, res) {
 // make sure to put this second to last...
 app.get("/", (req, res) => {
   // console.log(courses);
-  console.log("/");
   res.render("pages/index", { courses: JSON.stringify(courses) });
 });
 
@@ -83,6 +82,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("Hello world");
   console.log("Server is running on port 3000");
 });
