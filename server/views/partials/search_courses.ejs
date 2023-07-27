@@ -13,15 +13,12 @@
 </section>
 
 <script>
-  const choices = [
-    { name: "CMSC 16100", value: { subject: "CMSC", courseId: "16100" } },
-    { name: "CMSC 23200", value: { subject: "CMSC", courseId: "23200" } },
-    { name: "CMSC 28000", value: { subject: "CMSC", courseId: "28000" } },
-  ];
+  const courses = <%- courses %>;
+  // console.log(courses);
 
   $("#autocomplete-input")
     .typeahead({
-      source: choices,
+      source: courses,
       autoSelect: true,
       displayText: function (item) {
         return item.name;
@@ -34,7 +31,7 @@
     .keypress(function (e) {
       if (e.which == 13) {
         const inputVal = $(this).val();
-        const uniqueMatch = choices.filter(function (choice) {
+        const uniqueMatch = courses.filter(function (choice) {
           return choice.name.toLowerCase() === inputVal.toLowerCase();
         });
         if (uniqueMatch.length === 1) {

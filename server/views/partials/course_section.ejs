@@ -1,0 +1,12 @@
+<div class="container card w-50 my-3">
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>
+        <%- course_section["Instructors"].join(", ") %> - <%=
+        course_section["Academic Year"] %> <%= course_section["Academic Term"]
+        %>
+      </p>
+    </blockquote>
+    <a href="/eval/<%= course_section['id'] %>" class="stretched-link"></a>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head'); %>
+  <body>
+    <%- include('../partials/navbar'); %>
+    <section class="jumbotron text-center">
+      <div class="container mt-5">
+        <h1 class="jumbotron-heading my-4"><%= metadata["Course Name"] %></h1>
+        <% const instructors = metadata["Catalog Numbers"].map(function(item) {
+        return item.subject + " " + item.courseId; }).join(", "); %>
+        <h1 class="h3"><%= instructors %></h1>
+        <p>
+          <a href="<%= metadata['url'] %>" target="_blank">Link</a> to original course
+          evaluation
+        </p>
+      </div>
+    </section>
+  </body>
+</html>

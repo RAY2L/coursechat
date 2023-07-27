@@ -1,0 +1,84 @@
+{
+  "6535908dd09e1a4da3627de7baf6772dedfaac963087b24263141d280595a3b73f9a9bd1fd5e01d2b0d4613b59f13077": {
+    "id": "6535908dd09e1a4da3627de7baf6772dedfaac963087b24263141d280595a3b73f9a9bd1fd5e01d2b0d4613b59f13077",
+    "Catalog Numbers": [
+      {
+        "subject": "DATA",
+        "courseId": "11900"
+      },
+      {
+        "subject": "CMSC",
+        "courseId": "11900"
+      },
+      {
+        "subject": "STAT",
+        "courseId": "11900"
+      }
+    ],
+    "Sections": [
+      {
+        "subject": "DATA",
+        "courseId": "11900",
+        "section": "1"
+      },
+      {
+        "subject": "CMSC",
+        "courseId": "11900",
+        "section": "1"
+      },
+      {
+        "subject": "STAT",
+        "courseId": "11900",
+        "section": "1"
+      }
+    ],
+    "Course Name": "Introduction to Data Science II",
+    "Instructors": ["William Trimble"],
+    "Academic Year": "Spring",
+    "Academic Term": "2023",
+    "Number Enrolled": "54",
+    "Number Responses": "20",
+    "url": "https://uchicago.bluera.com/uchicago/rpvf-eng.aspx?lang=eng&redi=1&SelectedIDforPrint=6535908dd09e1a4da3627de7baf6772dedfaac963087b24263141d280595a3b73f9a9bd1fd5e01d2b0d4613b59f13077&ReportType=2&regl=en-US"
+  },
+  "57c2c24d8c696068a1e37bc5dc42e4127dd1a515d2821119b0928d294e7c64bd42d7f62ee514598b829dd663554ecb7b": {
+    "id": "57c2c24d8c696068a1e37bc5dc42e4127dd1a515d2821119b0928d294e7c64bd42d7f62ee514598b829dd663554ecb7b",
+    "Catalog Numbers": [
+      {
+        "subject": "DATA",
+        "courseId": "11900"
+      },
+      {
+        "subject": "CMSC",
+        "courseId": "11900"
+      },
+      {
+        "subject": "STAT",
+        "courseId": "11900"
+      }
+    ],
+    "Sections": [
+      {
+        "subject": "DATA",
+        "courseId": "11900",
+        "section": "1"
+      },
+      {
+        "subject": "CMSC",
+        "courseId": "11900",
+        "section": "1"
+      },
+      {
+        "subject": "STAT",
+        "courseId": "11900",
+        "section": "1"
+      }
+    ],
+    "Course Name": "Introduction to Data Science II",
+    "Instructors": ["Amy Nussbaum"],
+    "Academic Year": "Spring",
+    "Academic Term": "2023",
+    "Number Enrolled": "85",
+    "Number Responses": "43",
+    "url": "https://uchicago.bluera.com/uchicago/rpvf-eng.aspx?lang=eng&redi=1&SelectedIDforPrint=57c2c24d8c696068a1e37bc5dc42e4127dd1a515d2821119b0928d294e7c64bd42d7f62ee514598b829dd663554ecb7b&ReportType=2&regl=en-US"
+  }
+}

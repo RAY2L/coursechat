@@ -1,0 +1,5 @@
+[
+  { "name": "DATA 11900", "value": { "subject": "DATA", "courseId": "11900" } },
+  { "name": "CMSC 11900", "value": { "subject": "CMSC", "courseId": "11900" } },
+  { "name": "STAT 11900", "value": { "subject": "STAT", "courseId": "11900" } }
+]
