@@ -1,7 +1,7 @@
 {
   "6535908dd09e1a4da3627de7baf6772dedfaac963087b24263141d280595a3b73f9a9bd1fd5e01d2b0d4613b59f13077": {
     "id": "6535908dd09e1a4da3627de7baf6772dedfaac963087b24263141d280595a3b73f9a9bd1fd5e01d2b0d4613b59f13077",
-    "Catalog Numbers": [
+    "Catalog Number": [
       {
         "subject": "DATA",
         "courseId": "11900"
@@ -42,7 +42,7 @@
   },
   "57c2c24d8c696068a1e37bc5dc42e4127dd1a515d2821119b0928d294e7c64bd42d7f62ee514598b829dd663554ecb7b": {
     "id": "57c2c24d8c696068a1e37bc5dc42e4127dd1a515d2821119b0928d294e7c64bd42d7f62ee514598b829dd663554ecb7b",
-    "Catalog Numbers": [
+    "Catalog Number": [
       {
         "subject": "DATA",
         "courseId": "11900"

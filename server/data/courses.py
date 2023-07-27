@@ -8,8 +8,8 @@ def courses(evals: Dict) -> List[Dict]:
     courses_list = list()
 
     for data in evals.values():
-        for catalog_number in data["Catalog Numbers"]:
-            course_name = f"{catalog_number['subject']} {catalog_number['courseId']}"
+        for catalog_number in data["Catalog Number"]:
+            course_name = f"{catalog_number['Subject']} {catalog_number['CourseId']}"
 
             course_name_split = course_name.split(" ")
             subject = course_name_split[0]
@@ -25,7 +25,7 @@ def courses(evals: Dict) -> List[Dict]:
 
 
 # Open the JSON file
-with open("evalID_to_metadata.json", "r") as file:
+with open("2022.json", "r") as file:
     # Load JSON data from file
     evals = json.load(file)
 
