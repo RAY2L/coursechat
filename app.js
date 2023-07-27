@@ -14,31 +14,31 @@ const courses_raw_data = fs.readFileSync(
 );
 const courses = JSON.parse(courses_raw_data);
 
-// const course_list = courses.map((course) => course["name"]);
+const course_list = courses.map((course) => course["name"]);
 
-// const course_to_evalIDs_raw_data = fs.readFileSync(
-//   path.join(__dirname, "data/course_to_evalIDs.json")
-// );
-// const course_to_evalIDs = JSON.parse(course_to_evalIDs_raw_data);
+const course_to_evalIDs_raw_data = fs.readFileSync(
+  path.join(__dirname, "data/course_to_evalIDs.json")
+);
+const course_to_evalIDs = JSON.parse(course_to_evalIDs_raw_data);
 
-// const evalID_to_metadata_raw_data = fs.readFileSync(
-//   path.join(__dirname, "data/2022.json")
-// );
-// const evalID_to_metadata = JSON.parse(evalID_to_metadata_raw_data);
+const evalID_to_metadata_raw_data = fs.readFileSync(
+  path.join(__dirname, "data/2022.json")
+);
+const evalID_to_metadata = JSON.parse(evalID_to_metadata_raw_data);
 
-// const course_to_metadatas = Object.fromEntries(
-//   Object.entries(course_to_evalIDs).map(([course, evalIDs]) => {
-//     // console.log(evalIDs);
-//     const metadatas = evalIDs.map((evalID) => {
-//       // console.log(evalID_to_metadata[evalID]);
-//       // console.log(evalID_to_metadata[evalID]);
-//       return evalID_to_metadata[evalID];
-//     });
-//     // console.log(course, metadatas);
+const course_to_metadatas = Object.fromEntries(
+  Object.entries(course_to_evalIDs).map(([course, evalIDs]) => {
+    // console.log(evalIDs);
+    const metadatas = evalIDs.map((evalID) => {
+      // console.log(evalID_to_metadata[evalID]);
+      // console.log(evalID_to_metadata[evalID]);
+      return evalID_to_metadata[evalID];
+    });
+    // console.log(course, metadatas);
 
-//     return [course, metadatas];
-//   })
-// );
+    return [course, metadatas];
+  })
+);
 
 // app.get("/eval/:evalID", (req, res) => {
 //   const evalID = req.params.evalID;
