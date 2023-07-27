@@ -5,7 +5,7 @@ const path = require("path");
 const fs = require("fs");
 
 app.set("views", path.join(__dirname, "views"));
-// app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/public"));
 
 app.set("view engine", "ejs");
 
