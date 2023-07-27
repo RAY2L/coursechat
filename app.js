@@ -48,31 +48,31 @@ const course_to_metadatas = Object.fromEntries(
 //   res.render("pages/evaluation", { metadata: metadata });
 // });
 
-// app.get("/:subject/:courseId", function (req, res) {
-//   const subject = req.params.subject;
-//   const courseId = req.params.courseId;
+app.get("/:subject/:courseId", function (req, res) {
+  const subject = req.params.subject;
+  const courseId = req.params.courseId;
 
-//   // const courses = ["CMSC 16100", "CMSC 23200", "CMSC 28000"];
-//   // console.log(course_to_evalIDs);
-//   // console.log(evalID_to_metadata);
-//   // console.log(course_to_metadatas);
-//   const course = `${subject} ${courseId}`;
+  // const courses = ["CMSC 16100", "CMSC 23200", "CMSC 28000"];
+  // console.log(course_to_evalIDs);
+  // console.log(evalID_to_metadata);
+  // console.log(course_to_metadatas);
+  const course = `${subject} ${courseId}`;
 
-//   if (course_list.includes(course)) {
-//     // console.log(course_to_evalIDs);
-//     // console.log(course_to_metadatas[course]);
-//     // console.log(course);
-//     // console.log(course_to_metadatas[course]);
-//     res.render("pages/course", {
-//       subject: subject,
-//       courseId: courseId,
-//       evalIDs: JSON.stringify(course_to_evalIDs),
-//       course_sections: course_to_metadatas[course],
-//     });
-//   } else {
-//     res.redirect("/");
-//   }
-// });
+  if (course_list.includes(course)) {
+    // console.log(course_to_evalIDs);
+    // console.log(course_to_metadatas[course]);
+    // console.log(course);
+    // console.log(course_to_metadatas[course]);
+    res.render("pages/course", {
+      subject: subject,
+      courseId: courseId,
+      evalIDs: JSON.stringify(course_to_evalIDs),
+      course_sections: course_to_metadatas[course],
+    });
+  } else {
+    res.redirect("/");
+  }
+});
 
 // make sure to put this second to last...
 app.get("/", (req, res) => {
