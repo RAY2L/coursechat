@@ -3,16 +3,14 @@
   <%- include('../partials/head'); %>
   <body>
     <%- include('../partials/navbar'); %>
-    <section class="jumbotron text-center">
-      <div class="container mt-5">
-        <h1 class="jumbotron-heading my-4"><%= subject %> <%= courseId %></h1>
-        <h1 class="h3">Sections</h1>
+    <div class="container w-50">
+      <h1 class="h1 text-center mt-5 mb-4"><%= subject %> <%= courseId %></h1>
+      <h1 class="h3">Sections</h1>
+      <div class="list-group">
+        <% course_sections.forEach(function(course_section){ %> <%-
+        include('../partials/course_section', {course_section: course_section});
+        %> <% }) %>
       </div>
-    </section>
-    <div class="list-group">
-      <% course_sections.forEach(function(course_section){ %> <%-
-      include('../partials/course_section', {course_section: course_section});
-      %> <% }) %>
     </div>
   </body>
 </html>

@@ -74,6 +74,11 @@ app.get("/:subject/:courseId", function (req, res) {
   }
 });
 
+app.get("/info", (req, res) => {
+  // console.log(courses);
+  res.render("pages/info");
+});
+
 // make sure to put this second to last...
 app.get("/", (req, res) => {
   // console.log(courses);

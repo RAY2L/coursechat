@@ -3,17 +3,16 @@
   <%- include('../partials/head'); %>
   <body>
     <%- include('../partials/navbar'); %>
-    <section class="jumbotron text-center">
-      <div class="container mt-5">
-        <h1 class="jumbotron-heading my-4"><%= metadata["Course Name"] %></h1>
-        <% const instructors = metadata["Catalog Number"].map(function(item) {
+    <div class="container w-50">
+      <h1 class="h1 text-center mt-5 mb-4"><%= metadata["Course Name"] %></h1>
+      <% const instructors = metadata["Catalog Number"].map(function(item) {
         return item.Subject + " " + item.CourseId; }).join(", "); %>
-        <h1 class="h3"><%= instructors %></h1>
-        <p>
+        <h1 class="h3 text-center"><%= instructors %></h1>
+        <p class="text-center">
           <a href="<%= metadata['url'] %>" target="_blank">Link</a> to original
           course evaluation
         </p>
       </div>
-    </section>
+    </div>
   </body>
 </html>
