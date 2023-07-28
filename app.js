@@ -26,6 +26,11 @@ const evalID_to_metadata_raw_data = fs.readFileSync(
 );
 const evalID_to_metadata = JSON.parse(evalID_to_metadata_raw_data);
 
+const course_to_coursename_raw_data = fs.readFileSync(
+  path.join(__dirname, "data/course_to_coursename.json")
+);
+const course_to_coursename = JSON.parse(course_to_coursename_raw_data);
+
 const course_to_metadatas = Object.fromEntries(
   Object.entries(course_to_evalIDs).map(([course, evalIDs]) => {
     // console.log(evalIDs);
@@ -66,8 +71,9 @@ app.get("/:subject/:courseId", function (req, res) {
     res.render("pages/course", {
       subject: subject,
       courseId: courseId,
-      evalIDs: JSON.stringify(course_to_evalIDs),
+      // evalIDs: JSON.stringify(course_to_evalIDs),
       course_sections: course_to_metadatas[course],
+      course_name: course_to_coursename[course],
     });
   } else {
     res.redirect("/");
