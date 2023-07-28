@@ -3,8 +3,8 @@
   <%- include('../partials/head'); %>
   <body>
     <%- include('../partials/navbar'); %>
-    <div class="container w-50">
-      <h1 class="h1 text-center mt-5 mb-4"><%= metadata["Course Name"] %></h1>
+    <h1 class="h1 text-center mt-5 mb-4"><%= metadata["Course Name"] %></h1>
+    <div class="container">
       <% const instructors = metadata["Catalog Number"].map(function(item) {
         return item.Subject + " " + item.CourseId; }).join(", "); %>
         <h1 class="h3 text-center"><%= instructors %></h1>
