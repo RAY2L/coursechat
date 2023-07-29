@@ -88,7 +88,10 @@ app.get("/info", (req, res) => {
 // make sure to put this second to last...
 app.get("/", (req, res) => {
   // console.log(courses);
-  res.render("pages/index", { courses: JSON.stringify(courses) });
+  res.render("pages/index", {
+    courses: JSON.stringify(courses),
+    course_to_coursename: JSON.stringify(course_to_coursename),
+  });
 });
 
 // not `app.all(...)`?

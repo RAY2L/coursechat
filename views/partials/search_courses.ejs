@@ -4,7 +4,7 @@
     <div class="container">
       <input
         type="text"
-        class="form-control-lg"
+        class="form-control-lg w-50"
         id="autocomplete-input"
         placeholder="Search course..."
       />
@@ -14,6 +14,7 @@
 
 <script>
   const courses = <%- courses %>;
+  const course_to_coursename = <%- course_to_coursename %>;
   // console.log(courses);
 
   $("#autocomplete-input")
@@ -21,7 +22,7 @@
       source: courses,
       autoSelect: true,
       displayText: function (item) {
-        return item.name;
+        return `${item.name} - ${course_to_coursename[item.name]}`;
       },
       afterSelect: function (item) {
         window.location.href =
