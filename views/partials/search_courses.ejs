@@ -1,29 +1,60 @@
-<div class="container">
-  <h1 class="h5">Search evaluations by course</h1>
-  <input
-    type="text"
-    class="form-control-lg w-50"
-    id="autocomplete-input"
-    placeholder="Search course..."
-  />
+<div class="container d-flex justify-content-center">
+  <div class="card w-75">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="tab" href="#search_current"
+            >Autumn 2023</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#search_all">All</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body">
+      <div class="tab-content">
+        <div class="tab-pane active" id="search_current">
+          <input
+            type="text"
+            class="form-control-lg w-50"
+            id="search-current-input"
+            placeholder="Search Autumn 2023 courses..."
+          />
+        </div>
+        <div class="tab-pane" id="search_all">
+          <input
+            type="text"
+            class="form-control-lg w-50"
+            id="search-all-input"
+            placeholder="Search all courses..."
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
+  const current_courses = <%- current_courses %>;
   const courses = <%- courses %>;
-  const course_to_coursename = <%- course_to_coursename %>;
+  const current_course_to_coursename = <%- current_course_to_coursename %>;
+  const all_course_to_coursename = <%- all_course_to_coursename %>;
+  // console.log(current_courses);
   // console.log(courses);
 
-  $("#autocomplete-input")
+  $("#search-current-input")
     .typeahead({
-      source: courses,
+      source: current_courses,
       autoSelect: true,
       displayText: function (item) {
-        return `${item.name} - ${course_to_coursename[item.name]}`;
+        return `${item.name} - ${current_course_to_coursename[item.name]}`;
       },
       afterSelect: function (item) {
         window.location.href =
           "/" + item.value.subject + "/" + item.value.courseId;
       },
+      items: 10,
     })
     .keypress(function (e) {
       if (e.which === 13) {
@@ -38,16 +69,42 @@
       }
     });
 
-    $('.typeahead.dropdown-menu a').on('mousedown', function(event) {
-      console.log("typeahead dropdown mousedown");
-
-      // Checking for middle click (mouse wheel click)
-      if(event.which === 2) {
-        const url = `/${uniqueMatch[0].value.subject}/${uniqueMatch[0].value.courseId}`;
-
-        // Open link in a new tab
-        window.open(url, '_blank');
-        event.preventDefault(); // Prevent the default action
+  $("#search-all-input")
+    .typeahead({
+      source: courses,
+      autoSelect: true,
+      displayText: function (item) {
+        return `${item.name} - ${all_course_to_coursename[item.name]}`;
+      },
+      afterSelect: function (item) {
+        window.location.href =
+          "/" + item.value.subject + "/" + item.value.courseId;
+      },
+      items: 10,
+    })
+    .keypress(function (e) {
+      if (e.which === 13) {
+        const inputVal = $(this).val();
+        const uniqueMatch = courses.filter(function (choice) {
+          return choice.name.toLowerCase() === inputVal.toLowerCase();
+        });
+        if (uniqueMatch.length === 1) {
+          const url = `/${uniqueMatch[0].value.subject}/${uniqueMatch[0].value.courseId}`;
+          window.location.href = url;
+        }
       }
     });
+
+    // $('.typeahead.dropdown-menu a').on('mousedown', function(event) {
+    //   console.log("typeahead dropdown mousedown");
+
+    //   // Checking for middle click (mouse wheel click)
+    //   if(event.which === 2) {
+    //     const url = `/${uniqueMatch[0].value.subject}/${uniqueMatch[0].value.courseId}`;
+
+    //     // Open link in a new tab
+    //     window.open(url, '_blank');
+    //     event.preventDefault(); // Prevent the default action
+    //   }
+    // });
 </script>

@@ -7,18 +7,12 @@
     <section class="jumbotron text-center">
       <div class="container mt-5 mb-4">
         <!-- <h1 class="jumbotron-heading my-4">Re-evaluate course evaluations</h1> -->
-        <h1 class="h3">
-          Woohoo! Pre-reg is here 🥳🎉 See this quarter's
-          <a
-            class="btn btn-dark"
-            href="/autumn-2023-offerings"
-            style="font-weight: 600"
-            >Course offerings</a
-          >
-        </h1>
+        <h1 class="h3">Woohoo! Pre-reg is here 🥳🎉</h1>
       </div>
-      <%- include('../partials/search_courses', { courses: courses,
-      course_to_coursename: course_to_coursename }); %>
+      <%- include('../partials/search_courses', { current_courses:
+      current_courses, courses: courses, current_course_to_coursename:
+      current_course_to_coursename, all_course_to_coursename:
+      all_course_to_coursename }); %>
     </section>
 
     <%- include('../partials/first_time_modal'); %>

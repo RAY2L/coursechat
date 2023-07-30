@@ -9,8 +9,13 @@ app.set("views", path.join(__dirname, "views"));
 
 app.set("view engine", "ejs");
 
+const current_courses_raw_data = fs.readFileSync(
+  path.join(__dirname, "data/current_courses.json")
+);
+const current_courses = JSON.parse(current_courses_raw_data);
+
 const courses_raw_data = fs.readFileSync(
-  path.join(__dirname, "data/courses.json")
+  path.join(__dirname, "data/all_courses.json")
 );
 const courses = JSON.parse(courses_raw_data);
 
@@ -26,10 +31,17 @@ const evalID_to_metadata_raw_data = fs.readFileSync(
 );
 const evalID_to_metadata = JSON.parse(evalID_to_metadata_raw_data);
 
-const course_to_coursename_raw_data = fs.readFileSync(
-  path.join(__dirname, "data/course_to_coursename.json")
+const current_course_to_coursename_raw_data = fs.readFileSync(
+  path.join(__dirname, "data/current_course_to_coursename.json")
 );
-const course_to_coursename = JSON.parse(course_to_coursename_raw_data);
+const current_course_to_coursename = JSON.parse(
+  current_course_to_coursename_raw_data
+);
+
+const all_course_to_coursename_raw_data = fs.readFileSync(
+  path.join(__dirname, "data/all_course_to_coursename.json")
+);
+const all_course_to_coursename = JSON.parse(all_course_to_coursename_raw_data);
 
 const course_to_metadatas = Object.fromEntries(
   Object.entries(course_to_evalIDs).map(([course, evalIDs]) => {
@@ -72,8 +84,8 @@ app.get("/:subject/:courseId", function (req, res) {
       subject: subject,
       courseId: courseId,
       // evalIDs: JSON.stringify(course_to_evalIDs),
-      course_sections: course_to_metadatas[course],
-      course_name: course_to_coursename[course],
+      course_sections: course_to_metadatas[course] || [],
+      course_name: all_course_to_coursename[course],
     });
   } else {
     res.redirect("/");
@@ -89,8 +101,10 @@ app.get("/info", (req, res) => {
 app.get("/", (req, res) => {
   // console.log(courses);
   res.render("pages/index", {
+    current_courses: JSON.stringify(current_courses),
     courses: JSON.stringify(courses),
-    course_to_coursename: JSON.stringify(course_to_coursename),
+    current_course_to_coursename: JSON.stringify(current_course_to_coursename),
+    all_course_to_coursename: JSON.stringify(all_course_to_coursename),
   });
 });
 
