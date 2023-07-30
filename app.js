@@ -54,6 +54,11 @@ const current_ID_to_metadatas_raw_data = fs.readFileSync(
 );
 const current_ID_to_metadatas = JSON.parse(current_ID_to_metadatas_raw_data);
 
+const summaries_raw_data = fs.readFileSync(
+  path.join(__dirname, "data/summaries.json")
+);
+const summaries = JSON.parse(summaries_raw_data);
+
 const course_to_metadatas = Object.fromEntries(
   Object.entries(course_to_evalIDs).map(([course, evalIDs]) => {
     // console.log(evalIDs);
@@ -94,8 +99,10 @@ app.get("/eval/:evalID", (req, res) => {
   const evalID = req.params.evalID;
   // console.log(evalID);
   const metadata = evalID_to_metadata[evalID];
+  const summary = summaries[evalID]["Summary"];
+  console.log(summary);
 
-  res.render("pages/evaluation", { metadata: metadata });
+  res.render("pages/evaluation", { metadata: metadata, summary: summary });
 });
 
 app.get("/:subject/:courseId", function (req, res) {

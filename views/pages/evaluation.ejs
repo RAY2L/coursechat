@@ -4,15 +4,32 @@
   <body>
     <%- include('../partials/navbar'); %>
     <h1 class="h1 text-center mt-5 mb-4"><%= metadata["Course Name"] %></h1>
-    <% const sections = metadata["Catalog Number"].map(function(item) {
-      return item.Subject + " " + item.CourseId; }).join(", "); %>
-      <h1 class="h3 text-center"><%= sections %></h1>
-    <div class="container">
-        <p class="text-center">
-          <a href="<%= metadata['url'] %>" target="_blank">Link</a> to original
-          course evaluation
-        </p>
+    <% const sections = metadata["Catalog Number"].map(function(item) { return
+    item.Subject + " " + item.CourseId; }).join(", "); %>
+    <h1 class="h3 text-center"><%= sections %></h1>
+    <div class="container" style="width: 75%">
+      <% if (summary) { %>
+      <div class="row">
+        <h1 class="h3">Grading</h1>
+        <p><%= summary["Grading"] %></p>
       </div>
+      <div class="row">
+        <h1 class="h3">Workload</h1>
+        <p><%= summary["Workload"] %></p>
+      </div>
+      <div class="row">
+        <h1 class="h3">Teaching Style</h1>
+        <p><%= summary["Teaching Style"] %></p>
+      </div>
+      <div class="row">
+        <h1 class="h3">Difficulty Level</h1>
+        <p><%= summary["Difficulty Level"] %></p>
+      </div>
+      <% } else { %> <% } %>
+      <p class="text-center">
+        <a href="<%= metadata['url'] %>" target="_blank">Link</a> to original
+        course evaluation
+      </p>
     </div>
   </body>
 </html>
