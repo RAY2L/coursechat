@@ -18,23 +18,73 @@
       <div class="tab-content">
         <div class="tab-pane active" id="search_current">
           <h5 class="card-title">Search Autumn 2023 courses</h5>
-          <input
-            type="text"
-            class="form-control-lg w-100"
-            id="search-current-input"
-            placeholder="..."
-            autocomplete="off"
-          />
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              id="search-current-input"
+              placeholder="..."
+              autocomplete="off"
+              aria-describedby="basic-addon2"
+            />
+            <button
+              type="button"
+              class="btn bg-transparent py-0 d-flex align-items-center"
+              id="search-current-input-clear"
+              style="margin-left: -40px; z-index: 100"
+              onclick=""
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-x-lg"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
         <div class="tab-pane" id="search_all">
           <h5 class="card-title">Search all courses</h5>
-          <input
-            type="text"
-            class="form-control-lg w-100"
-            id="search-all-input"
-            placeholder="..."
-            autocomplete="off"
-          />
+          <div class="input-group">
+            <div class="input-group">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="search-all-input"
+                  placeholder="..."
+                  autocomplete="off"
+                  aria-describedby="basic-addon2"
+                />
+                <button
+                  type="button"
+                  class="btn bg-transparent py-0 d-flex align-items-center"
+                  id="search-all-input-clear"
+                  style="margin-left: -40px; z-index: 100"
+                  onclick=""
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-x-lg"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -103,16 +153,11 @@
       }
     });
 
-    // $('.typeahead.dropdown-menu a').on('mousedown', function(event) {
-    //   console.log("typeahead dropdown mousedown");
+    $("#search-current-input-clear").click(() => {
+      $("#search-current-input").val("");
+    });
 
-    //   // Checking for middle click (mouse wheel click)
-    //   if(event.which === 2) {
-    //     const url = `/${uniqueMatch[0].value.subject}/${uniqueMatch[0].value.courseId}`;
-
-    //     // Open link in a new tab
-    //     window.open(url, '_blank');
-    //     event.preventDefault(); // Prevent the default action
-    //   }
-    // });
+    $("#search-all-input-clear").click(() => {
+      $("#search-all-input").val("");
+    });
 </script>
