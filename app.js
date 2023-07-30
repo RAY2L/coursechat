@@ -122,12 +122,35 @@ app.get("/:subject/:courseId", function (req, res) {
     // console.log(course_to_metadatas[course]);
     // console.log(course);
     // console.log(course_to_metadatas[course]);
+    const current_course_sections = current_course_to_metadatas[course] || [];
+    const course_sections = course_to_metadatas[course] || [];
+
+    current_course_sections.sort((course_1, course_2) => {
+      if (course_1["Instructors"][0] < course_2["Instructors"][0]) {
+        return -1;
+      }
+      if (course_1["Instructors"][0] > course_2["Instructors"][0]) {
+        return 1;
+      }
+      return 0;
+    });
+
+    course_sections.sort((course_1, course_2) => {
+      if (course_1["Instructors"][0] < course_2["Instructors"][0]) {
+        return -1;
+      }
+      if (course_1["Instructors"][0] > course_2["Instructors"][0]) {
+        return 1;
+      }
+      return 0;
+    });
+
     res.render("pages/course", {
       subject: subject,
       courseId: courseId,
       // evalIDs: JSON.stringify(course_to_evalIDs),
-      current_course_sections: current_course_to_metadatas[course] || [],
-      course_sections: course_to_metadatas[course] || [],
+      current_course_sections: current_course_sections,
+      course_sections: course_sections,
       course_name: all_course_to_coursename[course],
     });
   } else {
