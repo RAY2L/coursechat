@@ -15,12 +15,9 @@ def course_to_coursename(course_to_evalIDs: Dict[str, List], evalID_to_metadata:
 
 
 # Open the JSON file
-with open("2022.json", "r") as file1, open("2021.json", "r") as file2:
+with open("combine_years.json", "r") as file:
     # Load JSON data from file
-    evals_2022 = json.load(file1)
-    evals_2021 = json.load(file2)
-
-    evals = {**evals_2022, **evals_2021}
+    evals = json.load(file)
 
     # print(course_to_evalIDs(evals))
 

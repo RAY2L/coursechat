@@ -21,18 +21,10 @@ const course_to_evalIDs_raw_data = fs.readFileSync(
 );
 const course_to_evalIDs = JSON.parse(course_to_evalIDs_raw_data);
 
-const evalID_to_metadata_2022_raw_data = fs.readFileSync(
-  path.join(__dirname, "data/2022.json")
+const evalID_to_metadata_raw_data = fs.readFileSync(
+  path.join(__dirname, "data/combined_years.json")
 );
-const evalID_to_metadata_2021_raw_data = fs.readFileSync(
-  path.join(__dirname, "data/2021.json")
-);
-const evalID_to_metadata_2022 = JSON.parse(evalID_to_metadata_2022_raw_data);
-const evalID_to_metadata_2021 = JSON.parse(evalID_to_metadata_2021_raw_data);
-const evalID_to_metadata = {
-  ...evalID_to_metadata_2022,
-  ...evalID_to_metadata_2021,
-};
+const evalID_to_metadata = JSON.parse(evalID_to_metadata_raw_data);
 
 const course_to_coursename_raw_data = fs.readFileSync(
   path.join(__dirname, "data/course_to_coursename.json")
