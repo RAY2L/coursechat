@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-import json
-
 import combine_years
 import course_to_evalIDs
 import courses
