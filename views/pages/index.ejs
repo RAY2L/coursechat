@@ -5,24 +5,22 @@
     <%- include('../partials/navbar'); %>
 
     <section class="jumbotron text-center">
-      <div class="container my-5">
-        <h1 class="jumbotron-heading my-4">Re-evaluate course evaluations</h1>
-        <h1 class="h4" style="vertical-align: baseline;">
-          Pre-reg is here 🥳🎉! See this quarter's
+      <div class="container mt-5 mb-4">
+        <!-- <h1 class="jumbotron-heading my-4">Re-evaluate course evaluations</h1> -->
+        <h1 class="h3">
+          Woohoo! Pre-reg is here 🥳🎉 See this quarter's
           <a
             class="btn btn-dark"
             href="/autumn-2023-offerings"
-            style="font-weight: 600;"
+            style="font-weight: 600"
             >Course offerings</a
           >
+        </h1>
       </div>
-      </h1>
+      <%- include('../partials/search_courses', { courses: courses,
+      course_to_coursename: course_to_coursename }); %>
     </section>
 
-    <%- include('../partials/search_courses', { courses: courses,
-    course_to_coursename: course_to_coursename }); %> <%-
-    include('../partials/first_time_modal'); %>
-
-    <div class="container d-flex justify-content-center mt-4"></div>
+    <%- include('../partials/first_time_modal'); %>
   </body>
 </html>
