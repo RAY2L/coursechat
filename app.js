@@ -99,7 +99,9 @@ app.get("/eval/:evalID", (req, res) => {
   const evalID = req.params.evalID;
   // console.log(evalID);
   const metadata = evalID_to_metadata[evalID];
-  const summary = summaries[evalID]["Summary"];
+  // console.log(metadata["Catalog Number"]);
+  // console.log(metadata["Catalog Number"][0]["Subject"]);
+  const summary = summaries[evalID]?.["Summary"];
   // console.log(summary);
 
   res.render("pages/evaluation", { metadata: metadata, summary: summary });

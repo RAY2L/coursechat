@@ -2,10 +2,10 @@
 <html lang="en">
   <%- include('../partials/head'); %>
   <body>
-    <%- include('../partials/navbar'); %>
-    <h1 class="h1 text-center mt-5 mb-4"><%= metadata["Course Name"] %></h1>
-    <% const sections = metadata["Catalog Number"].map(function(item) { return
-    item.Subject + " " + item.CourseId; }).join(", "); %>
+    <%- include('../partials/navbar'); %> <% const metadata_obj = metadata; %>
+    <h1 class="h1 text-center mt-5 mb-4"><%= metadata_obj["Course Name"] %></h1>
+    <% const sections = metadata_obj["Catalog Number"].map(function(item) {
+    return `${item["Subject"]} ${item["CourseId"]}`; }).join(", "); %>
     <h1 class="h3 text-center"><%= sections %></h1>
     <div class="container" style="width: 75%">
       <% if (summary) { %>
@@ -25,8 +25,14 @@
         <h1 class="h3">Difficulty Level</h1>
         <p><%= summary["Difficulty Level"] %></p>
       </div>
-      <% } else { %> <% } %>
-      <p class="text-center">
+      <% } else { %>
+      <div class="row">
+        <h1 class="h4 text-center my-3">
+          No summary generated, see <a href="/info">info</a>
+        </h1>
+      </div>
+      <% } %>
+      <p class="text-center lead">
         <a href="<%= metadata['url'] %>" target="_blank">Link</a> to original
         course evaluation
       </p>
