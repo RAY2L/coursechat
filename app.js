@@ -100,7 +100,7 @@ app.get("/eval/:evalID", (req, res) => {
   // console.log(evalID);
   const metadata = evalID_to_metadata[evalID];
   const summary = summaries[evalID]["Summary"];
-  console.log(summary);
+  // console.log(summary);
 
   res.render("pages/evaluation", { metadata: metadata, summary: summary });
 });
