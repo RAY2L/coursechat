@@ -22,7 +22,7 @@ const course_to_evalIDs_raw_data = fs.readFileSync(
 const course_to_evalIDs = JSON.parse(course_to_evalIDs_raw_data);
 
 const evalID_to_metadata_raw_data = fs.readFileSync(
-  path.join(__dirname, "data/combined_years.json")
+  path.join(__dirname, "data/combine_years.json")
 );
 const evalID_to_metadata = JSON.parse(evalID_to_metadata_raw_data);
 
