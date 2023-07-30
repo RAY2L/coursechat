@@ -26,18 +26,28 @@
       },
     })
     .keypress(function (e) {
-      if (e.which == 13) {
+      if (e.which === 13) {
         const inputVal = $(this).val();
         const uniqueMatch = courses.filter(function (choice) {
           return choice.name.toLowerCase() === inputVal.toLowerCase();
         });
         if (uniqueMatch.length === 1) {
-          window.location.href =
-            "/" +
-            uniqueMatch[0].value.subject +
-            "/" +
-            uniqueMatch[0].value.courseId;
+          const url = `/${uniqueMatch[0].value.subject}/${uniqueMatch[0].value.courseId}`;
+          window.location.href = url;
         }
+      }
+    });
+
+    $('.typeahead.dropdown-menu a').on('mousedown', function(event) {
+      console.log("typeahead dropdown mousedown");
+
+      // Checking for middle click (mouse wheel click)
+      if(event.which === 2) {
+        const url = `/${uniqueMatch[0].value.subject}/${uniqueMatch[0].value.courseId}`;
+
+        // Open link in a new tab
+        window.open(url, '_blank');
+        event.preventDefault(); // Prevent the default action
       }
     });
 </script>

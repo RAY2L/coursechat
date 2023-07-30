@@ -25,7 +25,7 @@ def courses(evals: Dict) -> List[Dict]:
 
 def run():
     # Open the JSON file
-    with open("2022.json", "r") as file:
+    with open("combine_years.json", "r") as file:
         # Load JSON data from file
         evals = json.load(file)
 
