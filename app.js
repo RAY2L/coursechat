@@ -78,8 +78,8 @@ app.get("/:subject/:courseId", function (req, res) {
   if (course_list.includes(course)) {
     // console.log(course_to_evalIDs);
     // console.log(course_to_metadatas[course]);
-    console.log(course);
-    console.log(course_to_metadatas[course]);
+    // console.log(course);
+    // console.log(course_to_metadatas[course]);
     res.render("pages/course", {
       subject: subject,
       courseId: courseId,
