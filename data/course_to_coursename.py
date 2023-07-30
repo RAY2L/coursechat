@@ -13,20 +13,20 @@ def course_to_coursename(course_to_evalIDs: Dict[str, List], evalID_to_metadata:
 
     return course_to_coursename_dict
 
+def run():
+    # Open the JSON file
+    with open("combine_years.json", "r") as file:
+        # Load JSON data from file
+        evals = json.load(file)
 
-# Open the JSON file
-with open("combine_years.json", "r") as file:
-    # Load JSON data from file
-    evals = json.load(file)
+        # print(course_to_evalIDs(evals))
 
-    # print(course_to_evalIDs(evals))
+    # Open the JSON file
+    with open("course_to_evalIDs.json", "r") as file:
+        # Load JSON data from file
+        course_to_evalIDs = json.load(file)
 
-# Open the JSON file
-with open("course_to_evalIDs.json", "r") as file:
-    # Load JSON data from file
-    course_to_evalIDs = json.load(file)
+        # print(course_to_evalIDs(evals))
 
-    # print(course_to_evalIDs(evals))
-
-with open("course_to_coursename.json", "w") as file:
-    json.dump(course_to_coursename(course_to_evalIDs, evals), file)
+    with open("course_to_coursename.json", "w") as file:
+        json.dump(course_to_coursename(course_to_evalIDs, evals), file)

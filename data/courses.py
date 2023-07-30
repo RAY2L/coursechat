@@ -23,13 +23,13 @@ def courses(evals: Dict) -> List[Dict]:
 
     return courses_list
 
+def run():
+    # Open the JSON file
+    with open("2022.json", "r") as file:
+        # Load JSON data from file
+        evals = json.load(file)
 
-# Open the JSON file
-with open("2022.json", "r") as file:
-    # Load JSON data from file
-    evals = json.load(file)
+        # print(courses(evals))
 
-    # print(courses(evals))
-
-with open("courses.json", "w") as file:
-    json.dump(courses(evals), file)
+    with open("courses.json", "w") as file:
+        json.dump(courses(evals), file)

@@ -18,11 +18,11 @@ def course_to_evalIDs(evals) -> Dict[str, List]:
 
     return course_to_evalIDs_dict
 
+def run():
+    # Open the JSON file
+    with open("combine_years.json", "r") as file:
+        # Load JSON data from file
+        evals = json.load(file)
 
-# Open the JSON file
-with open("combine_years.json", "r") as file:
-    # Load JSON data from file
-    evals = json.load(file)
-
-with open("course_to_evalIDs.json", "w") as file:
-    json.dump(course_to_evalIDs(evals), file)
+    with open("course_to_evalIDs.json", "w") as file:
+        json.dump(course_to_evalIDs(evals), file)
