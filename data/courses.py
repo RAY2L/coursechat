@@ -25,9 +25,12 @@ def courses(evals: Dict) -> List[Dict]:
 
 
 # Open the JSON file
-with open("2022.json", "r") as file:
+with open("2022.json", "r") as file1, open("2021.json", "r") as file2:
     # Load JSON data from file
-    evals = json.load(file)
+    evals_2022 = json.load(file1)
+    evals_2021 = json.load(file2)
+
+    evals = {**evals_2022, **evals_2021}
 
     # print(courses(evals))
 

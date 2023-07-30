@@ -15,9 +15,12 @@ def course_to_coursename(course_to_evalIDs: Dict[str, List], evalID_to_metadata:
 
 
 # Open the JSON file
-with open("2022.json", "r") as file:
+with open("2022.json", "r") as file1, open("2021.json", "r") as file2:
     # Load JSON data from file
-    evalID_to_metadata = json.load(file)
+    evals_2022 = json.load(file1)
+    evals_2021 = json.load(file2)
+
+    evals = {**evals_2022, **evals_2021}
 
     # print(course_to_evalIDs(evals))
 
@@ -29,4 +32,4 @@ with open("course_to_evalIDs.json", "r") as file:
     # print(course_to_evalIDs(evals))
 
 with open("course_to_coursename.json", "w") as file:
-    json.dump(course_to_coursename(course_to_evalIDs, evalID_to_metadata), file)
+    json.dump(course_to_coursename(course_to_evalIDs, evals), file)
