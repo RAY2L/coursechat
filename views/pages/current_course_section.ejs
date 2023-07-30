@@ -2,9 +2,25 @@
 <html lang="en">
   <%- include('../partials/head'); %>
   <body>
-    <%- include('../partials/navbar'); %>
-    <h1 class="h1 text-center mt-5 mb-4"><%= metadata["Course Name"] %></h1>
-    <h1 class="h3 text-center"><%= metadata["Subject"] %> <%= metadata["CourseId"] %></h1>
+    <%- include('../partials/navbar'); %> <% const metadata_obj = metadata; %>
+    <h1 class="h1 text-center mt-5 mb-4"><%= metadata_obj["Course Name"] %></h1>
+    <h1 class="h3 text-center">
+      <%= metadata_obj["Subject"] %> <%= metadata_obj["CourseId"] %> <%=
+      metadata_obj["Section"] %> - <%= metadata_obj["Instructors"].join(", ") %>
+    </h1>
+    <h1 class="h5 text-center"><%= metadata_obj["Offer time"] %></h1>
+    <div class="container">
+      <div class="row">
+        <h1 class="h3">Description</h1>
+        <p><%= metadata_obj["Description"] %></p>
+      </div>
+      <div class="row">
+        <h1 class="h3">Prerequisites</h1>
+        <p>
+          <% if (metadata_obj["Prerequisites"]) { %> <%=
+          metadata_obj["Prerequisites"] %> <% } else { %> None <% } %>
+        </p>
+      </div>
     </div>
   </body>
 </html>
