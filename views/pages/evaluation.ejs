@@ -2,6 +2,7 @@
 <html lang="en">
   <%- include('../partials/head'); %>
   <body>
+    <!-- Include const metadata_obj = metadata; or else item["Subject"], item["CourseId"] is undefined -->
     <%- include('../partials/navbar'); %> <% const metadata_obj = metadata; %>
     <h1 class="h1 text-center mt-5 mb-4"><%= metadata_obj["Course Name"] %></h1>
     <% const sections = metadata_obj["Catalog Number"].map(function(item) {
