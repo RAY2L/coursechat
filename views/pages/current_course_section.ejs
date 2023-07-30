@@ -12,7 +12,10 @@
     <div class="container">
       <div class="row">
         <h1 class="h3">Description</h1>
-        <p><%= metadata_obj["Description"] %></p>
+        <p>
+          <% if (metadata_obj["Description"]) { %> <%=
+          metadata_obj["Description"] %> <% } else { %> None <% } %>
+        </p>
       </div>
       <div class="row">
         <h1 class="h3">Prerequisites</h1>
