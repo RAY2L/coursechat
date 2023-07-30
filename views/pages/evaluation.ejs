@@ -9,6 +9,10 @@
     return `${item["Subject"]} ${item["CourseId"]}`; }).join(", "); %>
     <h1 class="h3 text-center"><%= sections %></h1>
     <div class="container" style="width: 75%">
+      <p class="text-center lead">
+        <a href="<%= metadata['url'] %>" target="_blank">Link</a> to original
+        course evaluation
+      </p>
       <% if (summary) { %>
       <div class="row">
         <h1 class="h3">Grading</h1>
@@ -33,10 +37,6 @@
         </h1>
       </div>
       <% } %>
-      <p class="text-center lead">
-        <a href="<%= metadata['url'] %>" target="_blank">Link</a> to original
-        course evaluation
-      </p>
     </div>
   </body>
 </html>
