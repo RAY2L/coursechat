@@ -80,11 +80,13 @@
       source: courses,
       autoSelect: true,
       displayText: function (item) {
+          // $(".dropdown-item").css("word-wrap", "break-word");
+          // $(".dropdown-item").css("white-space", "normal");
         return `${item.name} - ${all_course_to_coursename[item.name]}`;
       },
       afterSelect: function (item) {
         window.location.href =
-          "/" + item.value.subject + "/" + item.value.courseId;
+          `/${item.value.subject}/${item.value.courseId}`;
       },
       items: 10,
     })
@@ -99,14 +101,6 @@
           window.location.href = url;
         }
       }
-    });
-
-    $(document).ready(function() {
-      $('#search-current-input').val('');
-    });
-
-    $(document).ready(function() {
-      $('#search-all-input').val('');
     });
 
     // $('.typeahead.dropdown-menu a').on('mousedown', function(event) {

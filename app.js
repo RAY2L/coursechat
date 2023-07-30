@@ -44,6 +44,16 @@ const all_course_to_coursename_raw_data = fs.readFileSync(
 );
 const all_course_to_coursename = JSON.parse(all_course_to_coursename_raw_data);
 
+const current_course_to_IDs_raw_data = fs.readFileSync(
+  path.join(__dirname, "data/current_course_to_IDs.json")
+);
+const current_course_to_IDs = JSON.parse(current_course_to_IDs_raw_data);
+
+const current_ID_to_metadatas_raw_data = fs.readFileSync(
+  path.join(__dirname, "data/cur.json")
+);
+const current_ID_to_metadatas = JSON.parse(current_ID_to_metadatas_raw_data);
+
 const course_to_metadatas = Object.fromEntries(
   Object.entries(course_to_evalIDs).map(([course, evalIDs]) => {
     // console.log(evalIDs);
@@ -57,6 +67,28 @@ const course_to_metadatas = Object.fromEntries(
     return [course, metadatas];
   })
 );
+
+const current_course_to_metadatas = Object.fromEntries(
+  Object.entries(current_course_to_IDs).map(([course, IDs]) => {
+    // console.log(IDs);
+    const metadatas = IDs.map((ID) => {
+      // console.log(ID_to_metadata[ID]);
+      // console.log(ID_to_metadata[ID]);
+      return current_ID_to_metadatas[ID];
+    });
+    // console.log(course, metadatas);
+
+    return [course, metadatas];
+  })
+);
+
+app.get("/current_section/:current_section_ID", (req, res) => {
+  const current_section_ID = req.params.current_section_ID;
+  // console.log(current_section_ID);
+  const metadata = current_ID_to_metadatas[current_section_ID];
+
+  res.render("pages/current_course_section", { metadata: metadata });
+});
 
 app.get("/eval/:evalID", (req, res) => {
   const evalID = req.params.evalID;
@@ -85,6 +117,7 @@ app.get("/:subject/:courseId", function (req, res) {
       subject: subject,
       courseId: courseId,
       // evalIDs: JSON.stringify(course_to_evalIDs),
+      current_course_sections: current_course_to_metadatas[course] || [],
       course_sections: course_to_metadatas[course] || [],
       course_name: all_course_to_coursename[course],
     });

@@ -1,0 +1,14 @@
+<div class="container card my-3">
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>
+        <%- current_course_section["Instructors"].join(", ") %> - <%=
+        current_course_section["Offer time"] %>
+      </p>
+    </blockquote>
+    <a
+      href="/current_section/<%= current_course_section['id'] %>"
+      class="stretched-link"
+    ></a>
+  </div>
+</div>

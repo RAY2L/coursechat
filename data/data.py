@@ -7,6 +7,7 @@ import current_courses
 import all_courses
 import current_course_to_coursename
 import all_course_to_coursename
+import current_course_to_IDs
 
 # Add years here
 years = ["2021", "2022"]
@@ -19,3 +20,4 @@ all_courses.run()
 course_to_coursename.run()
 current_course_to_coursename.run()
 all_course_to_coursename.run()
+current_course_to_IDs.run()
