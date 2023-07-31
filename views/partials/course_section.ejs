@@ -7,6 +7,12 @@
         %>
       </p>
     </blockquote>
-    <a href="/eval/<%= course_section['Id'] %>" class="stretched-link"></a>
+    <% if (summaries[course_section["Id"]]) { %>
+    <span class="badge text-bg-success">Has Summary</span>
+    <% } %>
+    <a
+      href="/<%= subject %>/<%= courseId %>/eval/<%= course_section['Id'] %>"
+      class="stretched-link"
+    ></a>
   </div>
 </div>

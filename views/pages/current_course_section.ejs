@@ -3,6 +3,21 @@
   <%- include('../partials/head'); %>
   <body>
     <%- include('../partials/navbar'); %> <% const metadata_obj = metadata; %>
+    <div class="container">
+      <nav class="row" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item">
+            <a href="/<%= subject %>/<%= courseId %>"
+              ><%= subject %> <%= courseId %></a
+            >
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Autumn 2023
+          </li>
+        </ol>
+      </nav>
+    </div>
     <h1 class="h1 text-center mt-5 mb-4"><%= metadata_obj["Course Name"] %></h1>
     <h1 class="h3 text-center">
       <%= metadata_obj["Subject"] %> <%= metadata_obj["CourseId"] %> <%=

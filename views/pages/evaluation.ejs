@@ -4,10 +4,26 @@
   <body>
     <!-- Include const metadata_obj = metadata; or else item["Subject"], item["CourseId"] is undefined -->
     <%- include('../partials/navbar'); %> <% const metadata_obj = metadata; %>
+    <div class="container">
+      <nav class="row" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item">
+            <a href="/<%= subject %>/<%= courseId %>"
+              ><%= subject %> <%= courseId %></a
+            >
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Evaluation</li>
+        </ol>
+      </nav>
+    </div>
     <h1 class="h1 text-center mt-5 mb-4"><%= metadata_obj["Course Name"] %></h1>
     <% const sections = metadata_obj["Catalog Number"].map(function(item) {
-    return `${item["Subject"]} ${item["CourseId"]}`; }).join(", "); %>
-    <h1 class="h3 text-center"><%= sections %></h1>
+    return `${item["Subject"]} ${item["CourseId"]} ${item["Section"]}`;
+    }).join(", "); %>
+    <h1 class="h3 text-center">
+      <%= sections %> - <%= metadata_obj["Instructors"].join(", ") %>
+    </h1>
     <div class="container" style="width: 75%">
       <p class="text-center lead">
         <a href="<%= metadata['url'] %>" target="_blank">Link</a> to original

@@ -123,15 +123,26 @@ const current_course_to_metadatas = Object.fromEntries(
   })
 );
 
-app.get("/current_section/:current_section_ID", (req, res) => {
-  const current_section_ID = req.params.current_section_ID;
-  // console.log(current_section_ID);
-  const metadata = current_ID_to_metadatas[current_section_ID];
+app.get(
+  "/:subject/:courseId/current_section/:current_section_ID",
+  (req, res) => {
+    const subject = req.params.subject;
+    const courseId = req.params.courseId;
+    const current_section_ID = req.params.current_section_ID;
+    // console.log(current_section_ID);
+    const metadata = current_ID_to_metadatas[current_section_ID];
 
-  res.render("pages/current_course_section", { metadata: metadata });
-});
+    res.render("pages/current_course_section", {
+      subject: subject,
+      courseId: courseId,
+      metadata: metadata,
+    });
+  }
+);
 
-app.get("/eval/:evalID", (req, res) => {
+app.get("/:subject/:courseId/eval/:evalID", (req, res) => {
+  const subject = req.params.subject;
+  const courseId = req.params.courseId;
   const evalID = req.params.evalID;
   // console.log(evalID);
   const metadata = evalID_to_metadata[evalID];
@@ -140,7 +151,12 @@ app.get("/eval/:evalID", (req, res) => {
   const summary = summaries[evalID]?.["Summary"];
   // console.log(summary);
 
-  res.render("pages/evaluation", { metadata: metadata, summary: summary });
+  res.render("pages/evaluation", {
+    subject: subject,
+    courseId: courseId,
+    metadata: metadata,
+    summary: summary,
+  });
 });
 
 app.get("/:subject/:courseId", function (req, res) {
@@ -160,6 +176,7 @@ app.get("/:subject/:courseId", function (req, res) {
     // console.log(course_to_metadatas[course]);
     const current_course_sections = current_course_to_metadatas[course] || [];
     const course_sections = course_to_metadatas[course] || [];
+    // const summaries = summaries || [];
 
     // current_course_sections.sort((course_1, course_2) => {
     //   if (course_1["Instructors"][0] < course_2["Instructors"][0]) {
@@ -180,6 +197,7 @@ app.get("/:subject/:courseId", function (req, res) {
     //   }
     //   return 0;
     // });
+    // console.log(course_sections);
 
     res.render("pages/course", {
       subject: subject,
@@ -188,6 +206,7 @@ app.get("/:subject/:courseId", function (req, res) {
       current_course_sections: current_course_sections,
       course_sections: course_sections,
       course_name: all_course_to_coursename[course],
+      summaries: summaries,
     });
   } else {
     res.redirect("/");
