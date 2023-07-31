@@ -70,6 +70,31 @@ const course_to_metadatas = Object.fromEntries(
     });
     // console.log(course, metadatas);
 
+    const termOrder = ["Autumn", "Summer", "Spring", "Winter"];
+
+    metadatas.sort((course_1, course_2) => {
+      // First, sort by year in descending order
+      if (course_1["Academic Term"] !== course_2["Academic Term"]) {
+        return course_2["Academic Term"] - course_1["Academic Term"];
+      }
+
+      // If the year is the same, sort by the term based on the custom order
+      if (course_1["Academic Year"] !== course_2["Academic Year"]) {
+        return (
+          termOrder.indexOf(course_1["Academic Year"]) -
+          termOrder.indexOf(course_2["Academic Year"])
+        );
+      }
+
+      if (course_1["Instructors"][0] < course_2["Instructors"][0]) {
+        return -1;
+      }
+      if (course_1["Instructors"][0] > course_2["Instructors"][0]) {
+        return 1;
+      }
+      return 0;
+    });
+
     return [course, metadatas];
   })
 );
@@ -83,6 +108,16 @@ const current_course_to_metadatas = Object.fromEntries(
       return current_ID_to_metadatas[ID];
     });
     // console.log(course, metadatas);
+
+    metadatas.sort((course_1, course_2) => {
+      if (course_1["Instructors"][0] < course_2["Instructors"][0]) {
+        return -1;
+      }
+      if (course_1["Instructors"][0] > course_2["Instructors"][0]) {
+        return 1;
+      }
+      return 0;
+    });
 
     return [course, metadatas];
   })
@@ -126,25 +161,25 @@ app.get("/:subject/:courseId", function (req, res) {
     const current_course_sections = current_course_to_metadatas[course] || [];
     const course_sections = course_to_metadatas[course] || [];
 
-    current_course_sections.sort((course_1, course_2) => {
-      if (course_1["Instructors"][0] < course_2["Instructors"][0]) {
-        return -1;
-      }
-      if (course_1["Instructors"][0] > course_2["Instructors"][0]) {
-        return 1;
-      }
-      return 0;
-    });
+    // current_course_sections.sort((course_1, course_2) => {
+    //   if (course_1["Instructors"][0] < course_2["Instructors"][0]) {
+    //     return -1;
+    //   }
+    //   if (course_1["Instructors"][0] > course_2["Instructors"][0]) {
+    //     return 1;
+    //   }
+    //   return 0;
+    // });
 
-    course_sections.sort((course_1, course_2) => {
-      if (course_1["Instructors"][0] < course_2["Instructors"][0]) {
-        return -1;
-      }
-      if (course_1["Instructors"][0] > course_2["Instructors"][0]) {
-        return 1;
-      }
-      return 0;
-    });
+    // course_sections.sort((course_1, course_2) => {
+    //   if (course_1["Instructors"][0] < course_2["Instructors"][0]) {
+    //     return -1;
+    //   }
+    //   if (course_1["Instructors"][0] > course_2["Instructors"][0]) {
+    //     return 1;
+    //   }
+    //   return 0;
+    // });
 
     res.render("pages/course", {
       subject: subject,
