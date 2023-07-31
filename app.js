@@ -59,6 +59,7 @@ const summaries_raw_data = fs.readFileSync(
 );
 const summaries = JSON.parse(summaries_raw_data);
 
+// sort alphabetically here (instead of at route level)
 const course_to_metadatas = Object.fromEntries(
   Object.entries(course_to_evalIDs).map(([course, evalIDs]) => {
     // console.log(evalIDs);

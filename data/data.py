@@ -10,7 +10,7 @@ import all_course_to_coursename
 import current_course_to_IDs
 
 # Add years here
-years = ["2021", "2022"]
+years = ["2021", "2022", "current_eval"]
 
 combine_years.run(years)
 course_to_evalIDs.run()
