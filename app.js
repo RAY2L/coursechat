@@ -152,6 +152,7 @@ app.get("/:subject/:courseId/eval/:evalID", (req, res) => {
   // console.log(summary);
 
   res.render("pages/evaluation", {
+    evalID: evalID,
     subject: subject,
     courseId: courseId,
     metadata: metadata,

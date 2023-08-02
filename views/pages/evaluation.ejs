@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head'); %>
+  <%- include('../partials/head', "<%= subject %> <%= courseId %> eval <%=
+  evalID %>); %>
   <body>
     <!-- Include const metadata_obj = metadata; or else item["Subject"], item["CourseId"] is undefined -->
     <%- include('../partials/navbar'); %> <% const metadata_obj = metadata; %>
