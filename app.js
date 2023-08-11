@@ -140,17 +140,22 @@ app.get(
   }
 );
 
-app.get("/:subject/:courseId/eval/:evalID", (req, res) => {
+app.get("/:subject/:courseId/eval/:evalID", (req, res, next) => {
   const subject = req.params.subject;
   const courseId = req.params.courseId;
   const evalID = req.params.evalID;
   // console.log(evalID);
+
+  if (!(evalID in evalID_to_metadata)) {
+    return next();
+  }
+
   const metadata = evalID_to_metadata[evalID];
   // console.log(metadata["Catalog Number"]);
   // console.log(metadata["Catalog Number"][0]["Subject"]);
   const summary = summaries[evalID]?.["Summary"];
   // console.log(summary);
-
+  
   res.render("pages/evaluation", {
     evalID: evalID,
     subject: subject,
